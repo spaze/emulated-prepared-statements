@@ -2,6 +2,7 @@
 $db = new PDO('mysql:dbname=test_gbk', 'root', '');
 $db->exec('SET character_set_client = GBK'); // Remove this to close the vulnerability
 // $db->setAttribute(PDO::MYSQL_ATTR_DIRECT_QUERY, 0); // Or uncomment this
+// $db = new PDO('mysql:dbname=test_gbk', 'root', ''); // Or set the charset in the DSN like this
 
 /* SQL Injection Example */
 $_POST['username'] = chr(0xbf) . chr(0x27) . " OR 1 -- -";
